@@ -3,6 +3,7 @@ package com.example.blood_bank_app;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -25,6 +26,27 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        String[] STATES = new String[]{
+                "Andaman and Nicobar Islands", "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar",
+                "Chandigarh", "Chhattisgarh", "Dadra and Nagar Haveli", "Daman and Diu", "Delhi", "Goa",
+                "Gujarat", "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka",
+                "Kerala", "Ladakh", "Lakshadweep", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya",
+                "Mizoram", "Nagaland", "Odisha", "Puducherry", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu",
+                "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"
+        };
+        String[] BLOODGRPS = new String[]{
+                "A+", "B+", "O+", "AB+", "A-", "B-", "O-", "AB-"
+        };
+
+        AutoCompleteTextView editText1 = findViewById(R.id.state);
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, STATES);
+        editText1.setAdapter(adapter1);
+
+        AutoCompleteTextView editText2 = findViewById(R.id.bloodgrp);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, BLOODGRPS);
+        editText2.setAdapter(adapter2);
+
         nameEt = findViewById(R.id.name);
         mobilenoEt = findViewById(R.id.mobileno);
         addressEt = findViewById(R.id.address);
@@ -61,8 +83,8 @@ public class RegisterActivity extends AppCompatActivity {
                 bloodgrp = bloodgrpTv.getText().toString();
 
                 gender_index = genderRg.getCheckedRadioButtonId();
-                if (gender_index==0) gender="M";
-                else if (gender_index==1) gender="F";
+                if (gender_index==2131230946) gender="M";
+                else if (gender_index==2131230889) gender="F";
                 else gender="O";
 
                 diseases_flag = diseasesCb.isSelected();
@@ -73,7 +95,7 @@ public class RegisterActivity extends AppCompatActivity {
                 confirmpassword = confirmpasswordEt.getText().toString();
 
                 showMessage(name+"\n"+mobileno+"\n"+address+"\n"+city+"\n"+state+"\n"+pincode+"\n"+email+
-                        "\n"+dob+"\n"+bloodgrp+"\n"+gender+"\n"+diseases+"\n"+password+"\n"+confirmpassword);
+                        "\n"+dob+"\n"+bloodgrp+"\n"+gender_index+"\n"+gender+"\n"+diseases+"\n"+password+"\n"+confirmpassword);
             }
         });
     }
