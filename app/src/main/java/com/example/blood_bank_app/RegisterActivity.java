@@ -122,7 +122,22 @@ public class RegisterActivity extends AppCompatActivity {
             DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener() {
                 @Override
                 public void onDateSet(DatePicker view, int year, int month, int day) {
-                    dobEt.setText(year + "/" + (month+1) + "/" + day);
+                    // Cases to display date as perfect yyyy/mm/dd format
+                    if(month+1 < 10)
+                    {
+                        if(day < 10)
+                            dobEt.setText(year + "/0" + (month+1) + "/0" + day);
+                        else
+                            dobEt.setText(year + "/0" + (month+1) + "/" + day);
+                    }
+                    else
+                    {
+                        if(day < 10)
+                            dobEt.setText(year + "/" + (month+1) + "/0" + day);
+                        else
+                            dobEt.setText(year + "/" + (month+1) + "/" + day);
+                    }
+
                 }
             };
 
