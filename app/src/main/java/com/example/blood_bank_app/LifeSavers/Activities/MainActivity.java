@@ -1,13 +1,13 @@
-package com.example.blood_bank_app;
+package com.example.blood_bank_app.LifeSavers.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.blood_bank_app.R;
 
 public class MainActivity extends AppCompatActivity {
 

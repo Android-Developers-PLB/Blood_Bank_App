@@ -6,7 +6,7 @@
     android:layout_height="fill_parent"
     android:fillViewport="true"
     android:scrollbarSize="10dp"
-    tools:context=".RegisterActivity">
+    tools:context=".LifeSavers.Activities.RegisterActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
