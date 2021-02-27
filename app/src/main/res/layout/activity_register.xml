@@ -91,7 +91,6 @@
             android:layout_marginTop="63dp"
             android:layout_marginEnd="20dp"
             app:layout_constraintEnd_toStartOf="@+id/textInputLayout2"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView3"
             app:srcCompat="@drawable/baseline_smartphone_black_24dp" />
@@ -152,14 +151,14 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout5"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            android:layout_width="170dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
             android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
+            android:layout_marginEnd="16dp"
             android:hint="State"
             app:errorEnabled="true"
-            app:layout_constraintEnd_toStartOf="@id/textInputLayout6"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout4">
 
@@ -176,15 +175,14 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="16dp"
             android:hint="Pin Code"
             app:errorEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/textInputLayout5"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout4">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout5">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/pincode"
@@ -205,7 +203,7 @@
             app:errorEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout5">
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout6">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/email"
@@ -219,9 +217,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="239dp"
+            android:layout_marginTop="322dp"
             android:layout_marginEnd="20dp"
             app:layout_constraintEnd_toStartOf="@+id/textInputLayout7"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView5"
             app:srcCompat="@drawable/baseline_email_black_24dp" />
@@ -255,9 +254,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="63dp"
             android:layout_marginEnd="20dp"
             app:layout_constraintEnd_toStartOf="@+id/textInputLayout8"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView"
             app:srcCompat="@drawable/baseline_cake_black_24dp" />
@@ -292,9 +292,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="59dp"
+            android:layout_marginTop="56dp"
             android:layout_marginEnd="20dp"
             app:layout_constraintEnd_toStartOf="@+id/textInputLayout9"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView2"
             app:srcCompat="@drawable/baseline_bloodtype_black_24dp" />
@@ -433,12 +434,11 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="100dp"
             android:layout_marginEnd="16dp"
             android:text="Register"
             app:cornerRadius="30dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout11" />
 

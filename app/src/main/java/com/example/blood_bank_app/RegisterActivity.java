@@ -1,18 +1,20 @@
 package com.example.blood_bank_app;
 
-import android.content.DialogInterface;
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Calendar;
 
 public class RegisterActivity extends AppCompatActivity {
     private EditText nameEt, mobilenoEt, addressEt, cityEt, pincodeEt, emailEt, dobEt, passwordEt, confirmpasswordEt;
@@ -21,6 +23,11 @@ public class RegisterActivity extends AppCompatActivity {
     private RadioGroup genderRg;
     private CheckBox diseasesCb;
     private Button registerButton;
+
+    private DatePickerDialog datePicker;
+
+    //private Calendar calendar;
+    //private int day, month, year;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +72,9 @@ public class RegisterActivity extends AppCompatActivity {
         confirmpasswordEt = findViewById(R.id.confirmpassword);
         registerButton = findViewById(R.id.register_button);
 
+        // Date Picker
+        dobEt.setOnClickListener(dpClickListener);
+
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -99,6 +109,29 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
+
+    View.OnClickListener dpClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            final Calendar calendar = Calendar.getInstance();
+            int day = calendar.get(Calendar.DAY_OF_MONTH);
+            int month = calendar.get(Calendar.MONTH);
+            int year = calendar.get(Calendar.YEAR);
+
+            // Date Picker Listener
+            DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener() {
+                @Override
+                public void onDateSet(DatePicker view, int year, int month, int day) {
+                    dobEt.setText(year + "/" + (month+1) + "/" + day);
+                }
+            };
+
+            // Date Picker Listener
+            datePicker = new DatePickerDialog(RegisterActivity.this, listener, year, month, day);
+            datePicker.show();
+        }
+    };
+
 
     private void showMessage(String msg){
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
