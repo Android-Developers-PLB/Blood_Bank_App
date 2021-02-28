@@ -100,8 +100,8 @@ public class RegisterActivity extends AppCompatActivity {
                 bloodgrp = bloodgrpTv.getText().toString();
 
                 gender_index = genderRg.getCheckedRadioButtonId();
-                if (gender_index==2131230946) gender="M";
-                else if (gender_index==2131230889) gender="F";
+                if (gender_index==R.id.male) gender="M";
+                else if (gender_index==R.id.female) gender="F";
                 else gender="O";
 
                 if (diseasesCb.isChecked()) diseases = "Cancer";
