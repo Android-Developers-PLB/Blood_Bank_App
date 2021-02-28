@@ -13,10 +13,9 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Map;
+
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -25,14 +24,20 @@ import com.android.volley.toolbox.StringRequest;
 import com.example.blood_bank_app.LifeSavers.Utils.EndPoints;
 import com.example.blood_bank_app.LifeSavers.Utils.VolleySingleton;
 import com.example.blood_bank_app.R;
+import com.google.android.material.textfield.TextInputLayout;
+
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
-    private EditText nameEt, mobilenoEt, addressEt, cityEt, pincodeEt, emailEt, dobEt, passwordEt, confirmpasswordEt;
+    private EditText nameEt, mobilenoEt, addressEt, cityEt, pincodeEt, emailEt, dobEt, diseasesEt, passwordEt, confirmpasswordEt;
     private AutoCompleteTextView stateTv, bloodgrpTv;
     //private RadioButton maleRb, femaleRb, otherRb;
     private RadioGroup genderRg;
     private CheckBox diseasesCb;
     private Button registerButton;
+    private TextInputLayout diseasesTil;
 
     private DatePickerDialog datePicker;
 
@@ -75,12 +80,16 @@ public class RegisterActivity extends AppCompatActivity {
         bloodgrpTv = findViewById(R.id.bloodgrp);
         genderRg = findViewById(R.id.gender);
         diseasesCb = findViewById(R.id.diseases);
+        diseasesTil = findViewById(R.id.textInputLayout12);
+        diseasesEt = findViewById(R.id.diseases_et);
         passwordEt = findViewById(R.id.password);
         confirmpasswordEt = findViewById(R.id.confirmpassword);
         registerButton = findViewById(R.id.register_button);
 
         // Date Picker
         dobEt.setOnClickListener(dpClickListener);
+
+        diseasesCb.setOnClickListener(cbClickListener);
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -154,6 +163,19 @@ public class RegisterActivity extends AppCompatActivity {
             // Date Picker Listener
             datePicker = new DatePickerDialog(RegisterActivity.this, listener, year, month, day);
             datePicker.show();
+        }
+    };
+
+    View.OnClickListener cbClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            if(diseasesCb.isChecked())
+                diseasesTil.setVisibility(View.VISIBLE);
+            else
+            {
+                diseasesTil.setVisibility(View.GONE);
+                diseasesEt.setText("");
+            }
         }
     };
 

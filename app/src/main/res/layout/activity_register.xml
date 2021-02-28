@@ -237,6 +237,7 @@
             app:endIconDrawable="@drawable/ic_event_black_24dp"
             app:endIconMode="custom"
             app:errorEnabled="true"
+            app:helperText="Format : yyyy-mm-dd"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout7">
@@ -362,6 +363,28 @@
             app:layout_constraintTop_toBottomOf="@+id/gender" />
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout12"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Enter the diseases"
+            android:visibility="gone"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/diseases">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/diseases_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout10"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -375,7 +398,7 @@
             app:errorEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/diseases"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout12"
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -393,8 +416,9 @@
             android:layout_marginTop="25dp"
             android:layout_marginEnd="20dp"
             app:layout_constraintEnd_toStartOf="@+id/textInputLayout10"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/diseases"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout12"
             app:srcCompat="@drawable/baseline_vpn_key_black_24dp" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -406,9 +430,13 @@
             android:layout_marginTop="5dp"
             android:layout_marginEnd="16dp"
             android:hint="Confirm Password"
+            app:endIconDrawable="@drawable/ic_visibility_black_24dp"
+            app:endIconMode="password_toggle"
+            app:errorEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout10">
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout10"
+            app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/confirmpassword"
