@@ -11,14 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Blood_Bank_App">
-        <activity android:name=".LifeSavers.Activities.LoginActivity"></activity>
-        <activity android:name=".LifeSavers.Activities.RegisterActivity" />
-        <activity android:name=".LifeSavers.Activities.MainActivity">
+        <activity android:name=".LifeSavers.Activities.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".LifeSavers.Activities.LoginActivity" />
+        <activity android:name=".LifeSavers.Activities.RegisterActivity" />
+        <activity android:name=".LifeSavers.Activities.MainActivity">
+
         </activity>
     </application>
 
