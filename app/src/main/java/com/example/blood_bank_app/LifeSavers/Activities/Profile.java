@@ -1,12 +1,5 @@
 package com.example.blood_bank_app.LifeSavers.Activities;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
-import com.example.blood_bank_app.R;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,34 +11,18 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.blood_bank_app.R;
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity {
-
-
+public class Profile extends AppCompatActivity {
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
     NavigationView navigationView;
-
-    private Button login;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_profile);
 
-        login = findViewById(R.id.button_become_donor);
-
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(intent);
-            }
-        });
         setUpToolbar();
         navigationView = (NavigationView) findViewById(R.id.navigation_menu);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -54,28 +31,26 @@ public class MainActivity extends AppCompatActivity {
                 switch (menuItem.getItemId())
                 {
                     case R.id.aboutus:
-                        Intent intent2 = new Intent(MainActivity.this, AboutUs.class);
+                        Intent intent2 = new Intent(Profile.this, AboutUs.class);
                         startActivity(intent2);
-                        break;
-                    case R.id.feedback:
-                        Intent intent3 = new Intent(MainActivity.this,Feedback.class);
-                        startActivity(intent3);
-                        break;
-                    case R.id.logout:
-                        Intent intent4 = new Intent(MainActivity.this,LoginActivity.class);
-                        startActivity(intent4);
-                        break;
-                    case R.id.profile:
-                        Intent intent5 = new Intent(MainActivity.this, Profile.class);
-                        startActivity(intent5);
                         break;
 
                     case  R.id.nav_home:
+                        Intent intent22 = new Intent(Profile.this, MainActivity.class);
+                        startActivity(intent22);
+                        break;
+                    case R.id.feedback:
+                        Intent intent23 = new Intent(Profile.this, Feedback.class);
+                        startActivity(intent23);
+                        break;
+                    case R.id.logout:
+                        Intent intent34= new Intent(Profile.this, LoginActivity.class);
+                        startActivity(intent34);
+                        break;
+                    case R.id.profile:
                         drawerLayout = findViewById(R.id.drawerLayout);
                         drawerLayout.closeDrawers();
                         break;
-
-
 
                     case  R.id.nav_Policy:{
 
@@ -83,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(browserIntent);
 
                     }
-                           break;
+                    break;
                     case  R.id.nav_share:{
 
                         Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);

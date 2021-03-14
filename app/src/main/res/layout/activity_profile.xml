@@ -33,22 +33,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Home"
+                    android:text="Profile"
                     android:textSize="18sp"
                     ></TextView>
             </androidx.appcompat.widget.Toolbar>
         </androidx.cardview.widget.CardView>
 
 
-        <Button
-            android:id="@+id/button_become_donor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardView"
-            android:layout_marginTop="200dp"
-            android:text="Become Donor" />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,6 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Blood_Bank_App">
+        <activity android:name=".LifeSavers.Activities.Profile"></activity>
+        <activity android:name=".LifeSavers.Activities.Feedback" />
+        <activity android:name=".LifeSavers.Activities.AboutUs" />
         <activity android:name=".LifeSavers.Activities.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,9 +23,7 @@
         </activity>
         <activity android:name=".LifeSavers.Activities.LoginActivity" />
         <activity android:name=".LifeSavers.Activities.RegisterActivity" />
-        <activity android:name=".LifeSavers.Activities.MainActivity">
-
-        </activity>
+        <activity android:name=".LifeSavers.Activities.MainActivity" />
     </application>
 
 </manifest>
