@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     NavigationView navigationView;
 
     private Button login;
+    private Button requests;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         login = findViewById(R.id.button_become_donor);
+        requests=findViewById(R.id.button_requests);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +48,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        requests.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RequestsActivity.class);
+                startActivity(intent);
+            }
+        });
+
         setUpToolbar();
         navigationView = (NavigationView) findViewById(R.id.navigation_menu);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {

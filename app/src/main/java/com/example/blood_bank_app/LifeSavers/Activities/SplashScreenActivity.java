@@ -34,7 +34,6 @@ public class SplashScreenActivity extends AppCompatActivity {
         }, 3000);
 
 
-
         //Animation
         ImageView image=findViewById(R.id.imageView10);
         TextView textView=findViewById(R.id.textView2);
