@@ -24,9 +24,7 @@ public class MainActivity extends AppCompatActivity {
     NavigationView navigationView;
 
     private Button login;
-    private Button requests;
-    private Button search_users;
-    private Button create_request;
+    private Button requests,search,create_request;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         login = findViewById(R.id.button_become_donor);
         requests=findViewById(R.id.button_requests);
-        search_users=findViewById(R.id.button_search_donors);
+        search=findViewById(R.id.button_search);
         create_request = findViewById(R.id.button_create_request);
 
         login.setOnClickListener(new View.OnClickListener() {
@@ -53,15 +51,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        /*
-        search_users.setOnClickListener(new View.OnClickListener() {
+        search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SearchUsersActivity.class);
+                Intent intent = new Intent(MainActivity.this, SearchActivity.class);
                 startActivity(intent);
             }
         });
-         */
+
 
         create_request.setOnClickListener(new View.OnClickListener() {
             @Override
