@@ -1,24 +1,17 @@
 package com.example.blood_bank_app.LifeSavers.Activities;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
-import com.example.blood_bank_app.R;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
-
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Bundle;
-import android.view.MenuItem;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.blood_bank_app.R;
 import com.google.android.material.navigation.NavigationView;
@@ -32,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Button login;
     private Button requests;
+    private Button search_users;
+    private Button create_request;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
         login = findViewById(R.id.button_become_donor);
         requests=findViewById(R.id.button_requests);
+        search_users=findViewById(R.id.button_search_donors);
+        create_request = findViewById(R.id.button_create_request);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +49,24 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, RequestsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        /*
+        search_users.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SearchUsersActivity.class);
+                startActivity(intent);
+            }
+        });
+         */
+
+        create_request.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CreateRequestActivity.class);
                 startActivity(intent);
             }
         });
@@ -113,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void setUpToolbar() {
         drawerLayout = findViewById(R.id.drawerLayout);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.app_name, R.string.app_name);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);

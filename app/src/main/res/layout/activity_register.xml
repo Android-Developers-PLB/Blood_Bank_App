@@ -166,7 +166,8 @@
                 android:id="@+id/state"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="none"
+                android:dropDownHeight="250dp"
+                android:inputType="text|textAutoComplete"
                 android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -282,6 +283,7 @@
                 android:id="@+id/bloodgrp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:dropDownHeight="200dp"
                 android:ellipsize="end"
                 android:inputType="none"
                 android:maxLines="1"

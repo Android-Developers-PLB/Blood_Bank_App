@@ -78,7 +78,7 @@ public class Profile extends AppCompatActivity {
     }
     public void setUpToolbar() {
         drawerLayout = findViewById(R.id.drawerLayout);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.app_name, R.string.app_name);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
