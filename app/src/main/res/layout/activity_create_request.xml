@@ -26,14 +26,16 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/imageButton_req"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginTop="50dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:srcCompat="@drawable/add_image_icon" />
+            app:srcCompat="@drawable/add_image_icon"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout14"
@@ -49,10 +51,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton">
+            app:layout_constraintTop_toBottomOf="@+id/imageButton_req">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/name"
+                android:id="@+id/name_req"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName|textCapWords" />
@@ -74,7 +76,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout14">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/city"
+                android:id="@+id/city_req"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -95,7 +97,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout16">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/phoneno"
+                android:id="@+id/phoneno_req"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="phone" />
@@ -118,7 +120,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout18">
 
             <AutoCompleteTextView
-                android:id="@+id/bloodgrp"
+                android:id="@+id/bloodgrp_req"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:dropDownHeight="200dp"
@@ -143,7 +145,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout19">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/message"
+                android:id="@+id/message_req"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textLongMessage|textMultiLine" />
