@@ -12,7 +12,7 @@
         android:id="@+id/toolbar_requests"
         app:title="Requests"
         app:titleTextColor="@color/white"
-        android:background="@color/purple_200"/>
+        android:background="#CC0000"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
