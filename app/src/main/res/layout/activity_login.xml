@@ -58,7 +58,6 @@
         android:layout_marginTop="90dp"
         android:fontFamily="sans-serif-black"
         android:text="@string/login_1"
-        android:textColor="#000000"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
