@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -50,15 +51,32 @@
             android:textColor="@android:color/black"
             android:textSize="36sp" />
 
-        <EditText
-            android:id="@+id/et_blood_group"
-            android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout19"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="20dp"
-            android:hint="eg: A+"
-            android:textColor="@android:color/black"
-            android:textSize="24sp" />
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Blood Group"
+            app:endIconMode="dropdown_menu"
+            app:errorEnabled="true"
+            app:helperText="Required"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout18">
+
+            <AutoCompleteTextView
+                android:id="@+id/tv_bldgrp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:dropDownHeight="200dp"
+                android:ellipsize="end"
+                android:inputType="none"
+                android:maxLines="1"
+                android:padding="16dp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/submit_button"

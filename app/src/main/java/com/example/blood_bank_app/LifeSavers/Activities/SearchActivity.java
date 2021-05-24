@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -31,14 +33,21 @@ public class SearchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+
+        String[] BLOODGRPS = new String[]{"A+", "B+", "O+", "AB+", "A-", "B-", "O-", "AB-"};
+        AutoCompleteTextView tv_bldgrp = findViewById(R.id.tv_bldgrp);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, BLOODGRPS);
+        tv_bldgrp.setAdapter(adapter);
+
+
         final EditText et_blood_group, et_city;
-        et_blood_group = findViewById(R.id.et_blood_group);
+        //et_blood_group = findViewById(R.id.et_blood_group);
         et_city = findViewById(R.id.et_city);
         Button submit_button = findViewById(R.id.submit_button);
         submit_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String blood_group = et_blood_group.getText().toString();
+                String blood_group = tv_bldgrp.getText().toString();
                 String city = et_city.getText().toString();
                 if(isValid(blood_group, city)){
                     get_search_results(blood_group, city);
@@ -106,3 +115,15 @@ public class SearchActivity extends AppCompatActivity {
 
 
 }
+
+/*
+<EditText
+            android:id="@+id/et_blood_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:hint="eg: A+"
+            android:textColor="@android:color/black"
+            android:textSize="24sp" />
+ */

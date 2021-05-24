@@ -132,6 +132,5 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         getSupportActionBar().setTitle("");
         actionBarDrawerToggle.syncState();
-
     }
 }

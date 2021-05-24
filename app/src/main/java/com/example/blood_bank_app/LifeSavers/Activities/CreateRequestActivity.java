@@ -5,6 +5,7 @@ import android.content.ContentUris;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
+import android.nfc.Tag;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.motion.utils.Oscillator;
 import androidx.core.content.PermissionChecker;
 import androidx.preference.PreferenceManager;
 
@@ -41,7 +43,7 @@ import java.net.URISyntaxException;
 
 public class CreateRequestActivity extends AppCompatActivity {
 
-    EditText nameText, cityText, messageText;
+    EditText nameText, cityText, numberText, messageText;
     ImageButton postImage;
     Button submit_button;
     Uri imageUri;
@@ -59,21 +61,23 @@ public class CreateRequestActivity extends AppCompatActivity {
 
         nameText = findViewById(R.id.name_req);
         cityText = findViewById(R.id.city_req);
+        numberText = findViewById(R.id.phoneno_req);
         messageText = findViewById(R.id.message_req);
         postImage = findViewById(R.id.imageButton_req);
         submit_button = findViewById(R.id.create_request_button);
         submit_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String name, city, bloodgrp, message;
+                String name, city, bloodgrp, number, message;
                 name = nameText.getText().toString();
                 city = cityText.getText().toString();
+                number = numberText.getText().toString();
                 bloodgrp = bloodgrpTv2.getText().toString();
                 message = messageText.getText().toString();
 
                 if(isValid()){
                     //code to upload this post
-                    uploadRequest(name, city, bloodgrp, message);
+                    uploadRequest(name, city, bloodgrp, number, message);
                 }
 
             }
@@ -119,7 +123,7 @@ public class CreateRequestActivity extends AppCompatActivity {
 
 
 
-    private void uploadRequest(String name, String city, String bloodgrp, String message){
+    private void uploadRequest(String name, String city, String bloodgrp, String number, String message){
         //code to upload the message
         String path = "";
         try{
@@ -127,8 +131,7 @@ public class CreateRequestActivity extends AppCompatActivity {
         }catch (URISyntaxException e){
             showMessage("wrong uri");
         }
-        String number = PreferenceManager.getDefaultSharedPreferences(getApplicationContext())
-                .getString("number", "12345");
+        //String number = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("number", "12345");
         AndroidNetworking.upload(EndPoints.upload_request)
                 .addMultipartFile("file", new File(path))
                 .addQueryParameter("name", name)
