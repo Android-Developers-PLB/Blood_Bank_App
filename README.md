@@ -13,7 +13,7 @@ profile - m nahi bana raha tum log banao
 logout - done
 feedback - this week (work in progress)
 about us- this week (work in progress)
-privacy policy - work in progress
+privacy policy - done
 share - done 
 
 Shubham [20-05-21 02:46pm] : Added Create Request Page Activity (Front-end part only)
