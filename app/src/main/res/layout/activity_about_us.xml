@@ -12,7 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width= "match_parent"
         android:layout_height="match_parent"
-
+        android:background="#121212"
         >
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
@@ -38,6 +38,19 @@
                     ></TextView>
             </androidx.appcompat.widget.Toolbar>
         </androidx.cardview.widget.CardView>
+        <TextView
+            app:layout_constraintTop_toBottomOf="@id/cardView"
+            android:id="@+id/team_mem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Team Members"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="20dp"
+            app:layout_constraintRight_toRightOf="parent"
+            ></TextView>
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -49,4 +62,6 @@
         app:headerLayout="@layout/header"
         app:menu="@menu/drawer_menu">
     </com.google.android.material.navigation.NavigationView>
+
+
 </androidx.drawerlayout.widget.DrawerLayout>

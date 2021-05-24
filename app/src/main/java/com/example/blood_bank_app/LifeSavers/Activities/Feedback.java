@@ -10,12 +10,15 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.blood_bank_app.R;
 import com.google.android.material.navigation.NavigationView;
 
 public class Feedback extends AppCompatActivity {
     DrawerLayout drawerLayout;
+    LottieAnimationView lottieAnimationView;
     ActionBarDrawerToggle actionBarDrawerToggle;
     NavigationView navigationView;
     @Override
@@ -23,6 +26,27 @@ public class Feedback extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback);
         setUpToolbar();
+
+        lottieAnimationView=findViewById(R.id.e_mail);
+        lottieAnimationView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent emailIntent = new Intent(Intent.ACTION_SEND);
+                String [] recipients={"lifesavers.pbl@gmail.com"};
+                emailIntent.putExtra(Intent.EXTRA_EMAIL,recipients);
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT,"");
+                emailIntent.putExtra(Intent.EXTRA_TEXT," ");
+                emailIntent.putExtra(Intent.EXTRA_CC," ");
+                emailIntent.setType("text/html");
+                emailIntent.setPackage("com.google.android.gm");
+                startActivity(Intent.createChooser(emailIntent,"Send mail"));
+            }
+        });
+
+
+
+
+
         navigationView = (NavigationView) findViewById(R.id.navigation_menu);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
