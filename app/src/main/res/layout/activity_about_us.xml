@@ -9,11 +9,22 @@
     android:background="#F7FFFFFF"
     >
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:layout_width= "match_parent"
         android:layout_height="match_parent"
-        android:background="#121212"
+        android:background="#673AB7"
+        tools:context=".LifeSavers.Activities.AboutUs"
         >
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:clipToPadding="false"
+            android:foregroundGravity="center"
+            android:overScrollMode="never"
+            />
+
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
             android:layout_width="match_parent"
@@ -38,21 +49,9 @@
                     ></TextView>
             </androidx.appcompat.widget.Toolbar>
         </androidx.cardview.widget.CardView>
-        <TextView
-            app:layout_constraintTop_toBottomOf="@id/cardView"
-            android:id="@+id/team_mem"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Team Members"
-            android:textSize="20sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_marginTop="20dp"
-            app:layout_constraintRight_toRightOf="parent"
-            ></TextView>
 
 
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation_menu"
