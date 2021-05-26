@@ -139,7 +139,7 @@ public class AboutUs extends AppCompatActivity {
         //add items to list
         modelArrayList.add(new MyModel(
                 "Ajay Raut",
-                "Student at PICT",
+                "Backend Developer, Database Manager",
                 "21344",
                 R.drawable.ajay,
                 "https://www.linkedin.com/in/ajay-raut-1b324018b/",
@@ -147,14 +147,14 @@ public class AboutUs extends AppCompatActivity {
 
         modelArrayList.add(new MyModel(
                 "Yash Rajput",
-                "I am a competitive programmer and computer engineering student.",
+                "Front-end, Backend Developer, etc.",
                 "21361",
                 R.drawable.yash2,
                 "https://www.linkedin.com/in/yash-rajput-8b642b18b",
                 "https://instagram.com/yash.rajput__"));
         modelArrayList.add(new MyModel(
                 "Sourav Kotkar",
-                "Student at PICT",
+                "Backend Developer, Database Manager",
                 "21355",
                 R.drawable.sourav,
                 "https://www.linkedin.com/in/sourav-kotkar",
@@ -168,7 +168,7 @@ public class AboutUs extends AppCompatActivity {
                 "https://instagram.com/shubham.c"));
         modelArrayList.add(new MyModel(
                 "Samyak Samdariya",
-                "Student at PICT",
+                "UI/UX Designer, Front-end Developer",
                 "21346",
                 R.drawable.samyak,"https://www.linkedin.com/in/samyak-samdariya-24024a195/",
                 "https://instagram.com/_samyak_29"));
