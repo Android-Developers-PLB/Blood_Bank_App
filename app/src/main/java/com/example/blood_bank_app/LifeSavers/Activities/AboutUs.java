@@ -106,10 +106,7 @@ public class AboutUs extends AppCompatActivity {
                         //text.setText("Not Logged In");
                         startActivity(intent34);
                         break;
-                    case R.id.profile:
-                        Intent intent3 = new Intent(AboutUs.this, Profile.class);
-                        startActivity(intent3);
-                        break;
+
                     case  R.id.nav_Policy:{
 
                         Intent browserIntent  = new Intent(Intent.ACTION_VIEW , Uri.parse("https://yashrajputishu.wixsite.com/bloodbank"));

@@ -118,10 +118,7 @@ public class MainActivity extends AppCompatActivity {
                         //text.setText("Not Logged In");
                         startActivity(intent4);
                         break;
-                    case R.id.profile:
-                        Intent intent5 = new Intent(MainActivity.this, Profile.class);
-                        startActivity(intent5);
-                        break;
+
 
                     case  R.id.nav_home:
                         drawerLayout = findViewById(R.id.drawerLayout);

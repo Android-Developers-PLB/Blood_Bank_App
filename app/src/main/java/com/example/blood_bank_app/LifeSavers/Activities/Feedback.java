@@ -83,10 +83,7 @@ public class Feedback extends AppCompatActivity {
                         //text.setText("Not Logged In");
                         startActivity(intent34);
                         break;
-                    case R.id.profile:
-                        Intent intent = new Intent(Feedback.this, Profile.class);
-                        startActivity(intent);
-                        break;
+
                     case  R.id.nav_Policy:{
 
                         Intent browserIntent  = new Intent(Intent.ACTION_VIEW , Uri.parse("https://yashrajputishu.wixsite.com/bloodbank"));

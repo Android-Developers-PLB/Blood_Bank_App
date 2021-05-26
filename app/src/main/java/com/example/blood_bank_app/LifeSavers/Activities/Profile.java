@@ -61,10 +61,7 @@ public class Profile extends AppCompatActivity {
                         //text.setText("Not Logged In");
                         startActivity(intent34);
                         break;
-                    case R.id.profile:
-                        drawerLayout = findViewById(R.id.drawerLayout);
-                        drawerLayout.closeDrawers();
-                        break;
+
 
                     case  R.id.nav_Policy:{
 
