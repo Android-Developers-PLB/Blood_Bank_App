@@ -62,7 +62,7 @@ public class MyAdapter extends PagerAdapter {
         MyModel model = modelArrayList.get(position);
         String title = model.getTitle();
         String description = model.getDescription();
-        String date = model.getDate();
+        String date = model.getRoll();
         int image = model.getImage();
         String linkedinlink = model.getLinkedin();
         String instalink = model.getInsta();
