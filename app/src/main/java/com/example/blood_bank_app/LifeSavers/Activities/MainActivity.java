@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         View header = navigationView.getHeaderView(0);
         TextView text = (TextView) header.findViewById(R.id.menu_tv);
         String number = PreferenceManager.getDefaultSharedPreferences(getApplicationContext())
-                .getString("number", "No Logged In");
+                .getString("number", "Not Logged In");
         text.setText(number);
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -110,6 +110,12 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.logout:
                         Intent intent4 = new Intent(MainActivity.this,LoginActivity.class);
+                        PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit()
+                                .putString("number", "Not Logged In").apply();
+                        String number = PreferenceManager.getDefaultSharedPreferences(getApplicationContext())
+                                .getString("number", "Not Logged In");
+                        text.setText(number);
+                        //text.setText("Not Logged In");
                         startActivity(intent4);
                         break;
                     case R.id.profile:

@@ -53,7 +53,7 @@ public class Feedback extends AppCompatActivity {
         View header = navigationView.getHeaderView(0);
         TextView text = (TextView) header.findViewById(R.id.menu_tv);
         String number = PreferenceManager.getDefaultSharedPreferences(getApplicationContext())
-                .getString("number", "No Logged In");
+                .getString("number", "Not Logged In");
         text.setText(number);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -75,6 +75,12 @@ public class Feedback extends AppCompatActivity {
                         break;
                     case R.id.logout:
                         Intent intent34= new Intent(Feedback.this, LoginActivity.class);
+                        PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit()
+                                .putString("number", "Not Logged In").apply();
+                        String number = PreferenceManager.getDefaultSharedPreferences(getApplicationContext())
+                                .getString("number", "Not Logged In");
+                        text.setText(number);
+                        //text.setText("Not Logged In");
                         startActivity(intent34);
                         break;
                     case R.id.profile:
