@@ -35,9 +35,9 @@
             android:id="@+id/et_city"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_marginStart="20dp"
-            android:hint="eg: London"
+            android:layout_marginTop="10dp"
+            android:hint="Eg: Mumbai"
             android:textColor="@android:color/black"
             android:textSize="24sp" />
 
@@ -80,13 +80,12 @@
 
         <Button
             android:id="@+id/submit_button"
-            android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
             android:background="@drawable/buttonshape"
             android:text="Find donors"
-            android:textAllCaps="false"
+            android:textAllCaps="true"
             android:textColor="@android:color/white"
             android:textSize="20sp" />
 
