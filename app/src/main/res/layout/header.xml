@@ -8,11 +8,13 @@
 
     <TextView
         style="@style/TextAppearance.AppCompat.Body1"
+        android:id="@+id/menu_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="78dp"
         android:text="User Name"
         android:textColor="#FFFFFF"
-        android:textSize="40sp" />
+        android:textSize="30sp" />
 
 </LinearLayout>
+

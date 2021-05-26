@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -11,6 +13,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.preference.PreferenceManager;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.blood_bank_app.LifeSavers.MyAdapter;
@@ -70,6 +73,11 @@ public class AboutUs extends AppCompatActivity {
 
         setUpToolbar();
         navigationView = (NavigationView) findViewById(R.id.navigation_menu);
+        View header = navigationView.getHeaderView(0);
+        TextView text = (TextView) header.findViewById(R.id.menu_tv);
+        String number = PreferenceManager.getDefaultSharedPreferences(getApplicationContext())
+                .getString("number", "No Logged In");
+        text.setText(number);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {

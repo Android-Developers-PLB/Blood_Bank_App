@@ -5,11 +5,14 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.preference.PreferenceManager;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import com.example.blood_bank_app.R;
 import com.google.android.material.navigation.NavigationView;
@@ -22,9 +25,14 @@ public class Profile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-
         setUpToolbar();
+
         navigationView = (NavigationView) findViewById(R.id.navigation_menu);
+        View header = navigationView.getHeaderView(0);
+        TextView text = (TextView) header.findViewById(R.id.menu_tv);
+        String number = PreferenceManager.getDefaultSharedPreferences(getApplicationContext())
+                .getString("number", "No Logged In");
+        text.setText(number);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
