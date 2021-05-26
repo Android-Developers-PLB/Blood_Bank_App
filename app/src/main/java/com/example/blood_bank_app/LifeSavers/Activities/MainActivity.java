@@ -3,18 +3,33 @@ package com.example.blood_bank_app.LifeSavers.Activities;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.preference.PreferenceManager;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.example.blood_bank_app.LifeSavers.Utils.EndPoints;
+import com.example.blood_bank_app.LifeSavers.Utils.VolleySingleton;
 import com.example.blood_bank_app.R;
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,15 +41,18 @@ public class MainActivity extends AppCompatActivity {
     private Button login;
     private Button requests,search,create_request;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         login = findViewById(R.id.button_become_donor);
         requests=findViewById(R.id.button_requests);
         search=findViewById(R.id.button_search);
         create_request = findViewById(R.id.button_create_request);
+
 
 
         login.setOnClickListener(new View.OnClickListener() {
@@ -71,6 +89,12 @@ public class MainActivity extends AppCompatActivity {
 
         setUpToolbar();
         navigationView = (NavigationView) findViewById(R.id.navigation_menu);
+        View header = navigationView.getHeaderView(0);
+        TextView text = (TextView) header.findViewById(R.id.menu_tv);
+        String number = PreferenceManager.getDefaultSharedPreferences(getApplicationContext())
+                .getString("number", "Not Logged In");
+        text.setText(number);
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -86,6 +110,12 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.logout:
                         Intent intent4 = new Intent(MainActivity.this,LoginActivity.class);
+                        PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit()
+                                .putString("number", "Not Logged In").apply();
+                        String number = PreferenceManager.getDefaultSharedPreferences(getApplicationContext())
+                                .getString("number", "Not Logged In");
+                        text.setText(number);
+                        //text.setText("Not Logged In");
                         startActivity(intent4);
                         break;
                     case R.id.profile:
@@ -132,5 +162,6 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         getSupportActionBar().setTitle("");
         actionBarDrawerToggle.syncState();
+
     }
 }
