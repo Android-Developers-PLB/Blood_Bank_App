@@ -1,9 +1,12 @@
 package com.example.blood_bank_app.LifeSavers;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,10 +18,13 @@ import com.example.blood_bank_app.R;
 
 import java.util.ArrayList;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
 public class MyAdapter extends PagerAdapter {
 
     private Context context;
     private ArrayList<MyModel> modelArrayList;
+
 
     //constructor
     public MyAdapter(Context context, ArrayList<MyModel> modelArrayList) {
@@ -50,13 +56,16 @@ public class MyAdapter extends PagerAdapter {
         TextView Title1 = view.findViewById(R.id.Title1);
         TextView description1 = view.findViewById(R.id.description1);
         TextView date1 = view.findViewById(R.id.date1);
-
+        ImageButton linkedin = view.findViewById(R.id.linkedin);
+        ImageButton insta = view.findViewById(R.id.insta);
         //get data
         MyModel model = modelArrayList.get(position);
         String title = model.getTitle();
         String description = model.getDescription();
         String date = model.getDate();
         int image = model.getImage();
+        String linkedinlink = model.getLinkedin();
+        String instalink = model.getInsta();
 
         //set data
         banner1.setImageResource(image);
@@ -69,6 +78,23 @@ public class MyAdapter extends PagerAdapter {
             @Override
             public void onClick(View view) {
                 Toast.makeText(context,title+ "\n"+ description+ "\n"+date ,Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // on click img button
+        linkedin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent linkedin = new Intent(Intent.ACTION_VIEW, Uri.parse(linkedinlink));
+                context.startActivity(linkedin);
+            }
+        });
+
+        insta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent insta = new Intent(Intent.ACTION_VIEW, Uri.parse(instalink));
+                context.startActivity(insta);
             }
         });
 

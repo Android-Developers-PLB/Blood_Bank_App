@@ -1,14 +1,16 @@
 package com.example.blood_bank_app.LifeSavers;
 
 public class MyModel {
-    String title, description,date;
+    String title, description,date , linkedin, insta;
     int image;
 
-    public MyModel(String title, String description, String date, int image) {
+    public MyModel(String title, String description, String date, int image, String linkedin,String insta) {
         this.title = title;
         this.description = description;
         this.date = date;
         this.image = image;
+        this.linkedin = linkedin;
+        this.insta = insta;
     }
 
     public String getTitle() {
@@ -17,6 +19,22 @@ public class MyModel {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getLinkedin() {
+        return linkedin;
+    }
+
+    public void setLinkedin(String linkedin) {
+        this.linkedin = linkedin;
+    }
+
+    public String getInsta() {
+        return insta;
+    }
+
+    public void setInsta(String insta) {
+        this.insta = insta;
     }
 
     public String getDescription() {

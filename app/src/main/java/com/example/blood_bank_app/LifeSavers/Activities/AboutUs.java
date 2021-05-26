@@ -128,29 +128,39 @@ public class AboutUs extends AppCompatActivity {
         //add items to list
         modelArrayList.add(new MyModel(
                 "Ajay Raut",
-                "Bhai m leader hu",
-                "03/07/2001",
-                R.drawable.ajay));
+                "Student at PICT",
+                "21344",
+                R.drawable.ajay,
+                "https://www.linkedin.com/in/ajay-raut-1b324018b/",
+                "https://instagram.com/ajay_raut_21"));
+
         modelArrayList.add(new MyModel(
                 "Yash Rajput",
                 "I am a competitive programmer and computer engineering student.",
-                "03/07/2001",
-                R.drawable.yash2));
+                "21361",
+                R.drawable.yash2,
+                "https://www.linkedin.com/in/yash-rajput-8b642b18b",
+                "https://instagram.com/yash.rajput__"));
         modelArrayList.add(new MyModel(
                 "Sourav Kotkar",
-                "rocking guy......i m sbka baap",
-                "99/99/1998",
-                R.drawable.sourav));
+                "Student at PICT",
+                "21355",
+                R.drawable.sourav,
+                "https://www.linkedin.com/in/sourav-kotkar",
+                "https://instagram.com/souravkotkar"));
         modelArrayList.add(new MyModel(
                 "Shubham Chaudhary",
-                "Topper....mere samne achchee achchoo k watt lg jate",
-                "31/14/2000",
-                R.drawable.shubham));
+                "Front-end Developer and Tester",
+                "21353",
+                R.drawable.shubham,
+                "https://www.linkedin.com/in/shubham-chaudhary-8684961a4",
+                "https://instagram.com/shubham.c"));
         modelArrayList.add(new MyModel(
                 "Samyak Samdariya",
-                "Topper + coder (codechef 5*)",
-                "31/14/2111",
-                R.drawable.samyak));
+                "Student at PICT",
+                "21346",
+                R.drawable.samyak,"https://www.linkedin.com/in/samyak-samdariya-24024a195/",
+                "https://instagram.com/_samyak_29"));
 
         // seting up adapter..
         myAdapter = new MyAdapter(this, modelArrayList);
