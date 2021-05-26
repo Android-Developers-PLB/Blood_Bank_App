@@ -89,7 +89,7 @@ public class Feedback extends AppCompatActivity {
                         break;
                     case  R.id.nav_Policy:{
 
-                        Intent browserIntent  = new Intent(Intent.ACTION_VIEW , Uri.parse("https://sites.google.com/view/privacy-policy-of-blood-donor/home"));
+                        Intent browserIntent  = new Intent(Intent.ACTION_VIEW , Uri.parse("https://yashrajputishu.wixsite.com/bloodbank"));
                         startActivity(browserIntent);
 
                     }
