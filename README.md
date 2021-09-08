@@ -9,7 +9,7 @@ Shubham [22-02-21 10:25pm] : Added Registration Page Activity and functionalitie
 yash:-
 side menu navigation - done
 home button - done
-profile - m nahi bana raha tum log banao
+profile - won't be able to do it, ask someone else
 logout - done
 feedback - this week (work in progress)
 about us- this week (work in progress)
